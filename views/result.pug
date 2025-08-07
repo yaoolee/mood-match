@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h2 Your Mood: #{mood}
+  h2 Your Pokémon Match:
+  if pokemon
+    img(src=pokemon.image, alt=pokemon.name)
+    p Name: #{pokemon.name}
+  else
+    p No Pokémon found.
+
+  h2 Your Song Match:
+  if music
+    p Title: #{music.title}
+    p Artist: #{music.artist}
+    if music.preview
+      audio(controls)
+        source(src=music.preview, type="audio/mpeg")
+        Your browser does not support the audio tag.
+  else
+    p No song found.
+
+  a(href="/") Try another mood

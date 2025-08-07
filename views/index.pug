@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  form(action="/match", method="POST")
+    label(for="mood") Select your mood:
+    select(name="mood", id="mood", required)
+      option(value="") -- Choose Mood --
+      option(value="happy") Happy
+      option(value="sad") Sad
+      option(value="sleepy") Sleepy
+      option(value="excited") Excited
+    button(type="submit") Match My Mood
